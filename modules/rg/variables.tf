@@ -1,14 +1,14 @@
-variable "rg_name" {
+variable "name" {
   description = "Name of the Resource Group"
   type        = string
 }
 
-variable "rg_location" {
+variable "location" {
   description = "Azure region location"
   type        = string
 }
 
-variable "rg_tag" {
+variable "tags" {
   description = "Resource Group tag"
   type        = string
 }
