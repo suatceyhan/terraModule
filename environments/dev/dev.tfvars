@@ -53,10 +53,10 @@ vm_size                 = "Standard_DS1_v2"
 caching                 = "ReadWrite"
 os_type                 = "Linux"
 os_profile_linux_config = false
-managed_disk01_id       = "MyDisk 01"
-managed_disk02_id       = "MyDisk 02"
-managed_disk03_id       = "MyDisk 03"
-managed_disk04_id       = "MyDisk 04"
+managed_disk01_id       = "MyDisk_01"
+managed_disk02_id       = "MyDisk_02"
+managed_disk03_id       = "MyDisk_03"
+managed_disk04_id       = "MyDisk_04"
 
 #NIC
 nic_01_name          = "NIC-01"
@@ -75,8 +75,10 @@ pip_alloc            = "Dynamic"
 enable_ip_forwarding = true
 
 #NSG
-nsg_rule_name_vnet2_vnet3   = "NSG rule name vnet2 to vnet3"
-nsg_rule_name_vnet3_vnet2   = "NSG rule name vnet3 to vnet2"
+nsg_rule_name_vnet2_vnet3_3389   = "NSG_rule_name_vnet2_to_vnet3_3389"
+nsg_rule_name_vnet3_vnet2_3389   = "NSG_rule_name_vnet3_to_vnet2_3389"
+nsg_rule_name_vnet2_vnet3_80   = "NSG_rule_name_vnet2_to_vnet3_80"
+nsg_rule_name_vnet3_vnet2_80   = "NSG_rule_name_vnet3_to_vnet2_80"
 priority1                   = 1001
 priority2                   = 1002
 priority3                   = 1003
@@ -85,8 +87,8 @@ direction_IN                = "Inbound"
 direction_OUT               = "Outbound"
 access_allow                = "Allow"
 access_deny                 = "Deny"
-protocol_tcp                = "TCP"
-protocol_udp                = "UDP"
+protocol_tcp                = "Tcp"
+protocol_udp                = "Udp"
 source_port_range           = "*"
 destination_port_range_3389 = "3389"
 destination_port_range_80   = "80"
@@ -94,6 +96,6 @@ nsg_vnet01                  = "nsg_vnet01"
 nsg_vnet02                  = "nsg_vnet02"
 nsg_vnet03                  = "nsg_vnet03"
 nsg_vnet04                  = "nsg_vnet04"
-
-
+source_address_prefix       = "*"
+destination_address_prefix  = "*"
 

@@ -1,101 +1,101 @@
 variable "az104-06-rg1" {
-  description   = "Resource Group name"
-  type          = string
+  description = "Resource Group name"
+  type        = string
 }
 
 variable "az104-06-rg2" {
-  description   = "Resource Group name"
-  type          = string
+  description = "Resource Group name"
+  type        = string
 }
 
 variable "az104-06-rg3" {
-  description   = "Resource Group name"
-  type          = string
+  description = "Resource Group name"
+  type        = string
 }
 
 variable "rg1_location" {
-  description   = "Resource Group location"
-  type          = string
+  description = "Resource Group location"
+  type        = string
 }
 
 variable "rg2_location" {
-  description   = "Resource Group location"
-  type          = string
+  description = "Resource Group location"
+  type        = string
 }
 
 variable "rg3_location" {
-  description   = "Resource Group location"
-  type          = string
+  description = "Resource Group location"
+  type        = string
 }
 
 variable "rg1_tags" {
-  description   = "Resource Group tag name"
-  type          = string
+  description = "Resource Group tag name"
+  type        = string
 }
 
 variable "rg2_tags" {
-  description   = "Resource Group tag name"
-  type          = string
+  description = "Resource Group tag name"
+  type        = string
 }
 
 variable "rg3_tags" {
-  description   = "Resource Group tag name"
-  type          = string
+  description = "Resource Group tag name"
+  type        = string
 }
 
 variable "az104-06-vnet01" {
-  description   = "Resource Group name"
-  type          = string
+  description = "Resource Group name"
+  type        = string
 }
 
 variable "az104-06-vnet02" {
-  description   = "Resource Group name"
-  type          = string
+  description = "Resource Group name"
+  type        = string
 }
 
 variable "az104-06-vnet03" {
-  description   = "Resource Group name"
-  type          = string
+  description = "Resource Group name"
+  type        = string
 }
 
 variable "vnet01-subnet0-name" {
-  description   = "Resource Group name"
-  type          = string
+  description = "Resource Group name"
+  type        = string
 }
 
 variable "vnet01-subnet1-name" {
-  description   = "Resource Group name"
-  type          = string
+  description = "Resource Group name"
+  type        = string
 }
 
 variable "vnet01-subnetappgw-name" {
-  description   = "Resource Group name"
-  type          = string
+  description = "Resource Group name"
+  type        = string
 }
 
 variable "vnet02-subnet0-name" {
-  description   = "Resource Group name"
-  type          = string
+  description = "Resource Group name"
+  type        = string
 }
 
 variable "vnet03-subnet0-name" {
-  description   = "Resource Group name"
-  type          = string
+  description = "Resource Group name"
+  type        = string
 }
 
 variable "vnet01_address_space" {
-  description   = "Resource Group name"
-  type          = string
+  description = "Resource Group name"
+  type        = string
 }
 
 variable "vnet02_address_space" {
-  description   = "Resource Group name"
-  type          = string
+  description = "Resource Group name"
+  type        = string
 }
 
 variable "vnet03_address_space" {
-  description   = "Resource Group name"
-  type          = string
+  description = "Resource Group name"
+  type        = string
 }
 
 variable "address_prefix_v1s0" {
@@ -303,95 +303,115 @@ variable "enable_ip_forwarding" {
   type        = string
 }
 
-variable "nsg_rule_name_vnet2_vnet3" {
-  description = "NSG rule name vnet2 to vnet3"
+variable "nsg_rule_name_vnet2_vnet3_3389" {
+  description = "NSG rule name vnet2 to vnet3 3389"
   type        = string
 }
 
-variable "nsg_rule_name_vnet3_vnet2" {
-  description = "NSG rule name vnet3 to vnet2"
+variable "nsg_rule_name_vnet3_vnet2_3389" {
+  description = "NSG rule name vnet3 to vnet2 3389"
+  type        = string
+}
+
+variable "nsg_rule_name_vnet2_vnet3_80" {
+  description = "NSG rule name vnet2 to vnet3 80"
+  type        = string
+}
+
+variable "nsg_rule_name_vnet3_vnet2_80" {
+  description = "NSG rule name vnet3 to vnet2 80"
   type        = string
 }
 
 variable "priority1" {
   description = "priority1"
-  type = string
+  type        = string
 }
 
 variable "priority2" {
   description = "priority2"
-  type = string
+  type        = string
 }
 
 variable "priority3" {
   description = "priority3"
-  type = string
+  type        = string
 }
 
 variable "priority4" {
   description = "priority4"
-  type = string
+  type        = string
 }
 
 variable "direction_IN" {
   description = "direction inbound"
-  type = string
+  type        = string
 }
 
 variable "direction_OUT" {
   description = "direction outbound"
-  type = string
+  type        = string
 }
 
 variable "access_allow" {
   description = "access allow"
-  type = string
+  type        = string
 }
 
 variable "access_deny" {
   description = "access deny"
-  type = string
+  type        = string
 }
 
 variable "protocol_tcp" {
   description = "protocol TCP"
-  type = string
+  type        = string
 }
 
 variable "protocol_udp" {
   description = "protocol UDP"
-  type = string
+  type        = string
 }
 
 variable "source_port_range" {
   description = "source_port_range"
-  type = string
+  type        = string
 }
 
 variable "destination_port_range_3389" {
   description = "destination_port_range 3389"
-  type = string
+  type        = string
 }
 
 variable "destination_port_range_80" {
   description = "destination_port_range 80"
-  type = string
+  type        = string
+}
+
+variable "source_address_prefix" {
+  description = "destination_port_range 3389"
+  type        = string
+}
+
+variable "destination_address_prefix" {
+  description = "destination_port_range 80"
+  type        = string
 }
 
 variable "nsg_vnet01" {
   description = "NSG Vnet01"
-  type = string
+  type        = string
 }
 
 variable "nsg_vnet02" {
   description = "NSG Vnet02"
-  type = string
+  type        = string
 }
 variable "nsg_vnet03" {
   description = "NSG Vnet03"
-  type = string
+  type        = string
 }
 variable "nsg_vnet04" {
   description = "NSG Vnet04"
-  type = string
+  type        = string
 }

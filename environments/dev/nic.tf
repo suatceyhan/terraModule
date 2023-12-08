@@ -5,7 +5,7 @@ module "nic-01" {
   resource_group_name  = module.az104-06-rg1.rg_name
   enable_ip_forwarding = var.enable_ip_forwarding
   ip_conf_name         = var.ip_conf_01_name
-  ip_conf_subnet       = module.vnet01_subnet0.subnet_id  #var.ip_conf_01_subnet
+  ip_conf_subnet       = module.vnet01_subnet0.subnet_id #var.ip_conf_01_subnet
   ip_alloc             = var.pip_alloc
 }
 
