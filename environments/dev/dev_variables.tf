@@ -415,3 +415,53 @@ variable "nsg_vnet04" {
   description = "NSG Vnet04"
   type        = string
 }
+
+variable "peering_name_1to2" {
+  description = "Peering 1 to 2"
+}
+
+variable "peering_name_2to1" {
+  description = "Peering 2 to 1"
+}
+
+variable "peering_name_1to3" {
+  description = "Peering 1 to 3"
+}
+
+variable "peering_name_3to1" {
+  description = "Peering 3 to 1"
+}
+
+variable "allow_forwarded_traffic_T" {
+  description = "allow_forwarded_traffic TRUE"
+}
+
+variable "allow_forwarded_traffic_F" {
+  description = "allow_forwarded_traffic FALSE"
+}
+
+variable "allow_virtual_network_access_T" {
+  description = "allow_virtual_network_access TRUE"
+}
+
+variable "allow_virtual_network_access_F" {
+  description = "allow_virtual_network_access FALSE"
+}
+
+variable "allow_gateway_transit_T" {
+  description = "allow_gateway_transit TRUE"
+}
+
+variable "allow_gateway_transit_F" {
+  description = "allow_gateway_transit FALSE"
+}
+
+variable "use_remote_gateways_T" {
+  description = "use_remote_gateways TRUE"
+}
+
+variable "use_remote_gateways_F" {
+  description = "use_remote_gateways FALSE"
+}
+
+
