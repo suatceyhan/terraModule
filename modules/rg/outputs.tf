@@ -1,3 +1,6 @@
 output "rg_name" {
-  value = [var.name, var.location, var.tags]
+  value = azurerm_resource_group.az104-06.name
+}
+output "rg_location" {
+  value = azurerm_resource_group.az104-06.location
 }

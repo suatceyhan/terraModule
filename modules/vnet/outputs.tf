@@ -1,3 +1,3 @@
 output "vnet" {
-  value = [var.name, var.location, var.resource_group_name, var.address_space]
+  value = azurerm_virtual_network.az104-06.name
 }

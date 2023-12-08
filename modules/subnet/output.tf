@@ -1,3 +1,11 @@
-output "Subnet" {
-  value = [var.name, var.resource_group_name, var.virtual_network_name, var.address_prefixes]
+output "subnet_name" {
+  value = azurerm_subnet.subnet.name
+}
+
+output "subnet_id" {
+  value = azurerm_subnet.subnet.id
+}
+
+output "address_prefixes" {
+  value = azurerm_subnet.subnet.address_prefixes
 }
