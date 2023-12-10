@@ -13,6 +13,16 @@ variable "az104-06-rg3" {
   type        = string
 }
 
+variable "az104-06-rg4" {
+  description = "Resource Group name"
+  type        = string
+}
+
+variable "az104-06-rg5" {
+  description = "Resource Group name"
+  type        = string
+}
+
 variable "rg1_location" {
   description = "Resource Group location"
   type        = string
@@ -325,22 +335,22 @@ variable "nsg_rule_name_vnet3_vnet2_80" {
 
 variable "priority1" {
   description = "priority1"
-  type        = string
+  type        = number
 }
 
 variable "priority2" {
   description = "priority2"
-  type        = string
+  type        = number
 }
 
 variable "priority3" {
   description = "priority3"
-  type        = string
+  type        = number
 }
 
 variable "priority4" {
   description = "priority4"
-  type        = string
+  type        = number
 }
 
 variable "direction_IN" {
@@ -418,50 +428,256 @@ variable "nsg_vnet04" {
 
 variable "peering_name_1to2" {
   description = "Peering 1 to 2"
+  type        = string
 }
 
 variable "peering_name_2to1" {
   description = "Peering 2 to 1"
+  type        = string
 }
 
 variable "peering_name_1to3" {
   description = "Peering 1 to 3"
+  type        = string
 }
 
 variable "peering_name_3to1" {
   description = "Peering 3 to 1"
+  type        = string
 }
 
 variable "allow_forwarded_traffic_T" {
   description = "allow_forwarded_traffic TRUE"
+  type        = string
 }
 
 variable "allow_forwarded_traffic_F" {
   description = "allow_forwarded_traffic FALSE"
+  type        = string
 }
 
 variable "allow_virtual_network_access_T" {
   description = "allow_virtual_network_access TRUE"
+  type        = string
 }
 
 variable "allow_virtual_network_access_F" {
   description = "allow_virtual_network_access FALSE"
+  type        = string
 }
 
 variable "allow_gateway_transit_T" {
   description = "allow_gateway_transit TRUE"
+  type        = string
 }
 
 variable "allow_gateway_transit_F" {
   description = "allow_gateway_transit FALSE"
+  type        = string
 }
 
 variable "use_remote_gateways_T" {
   description = "use_remote_gateways TRUE"
+  type        = string
 }
 
 variable "use_remote_gateways_F" {
   description = "use_remote_gateways FALSE"
+  type        = string
+}
+
+variable "pip_name_LB" {
+  description = "pip_name LB"
+  type        = string
+}
+
+variable "pip_name_GWAPP" {
+  description = "pip_name GWAPP"
+  type        = string
+}
+
+variable "allocation_method_static" {
+  description = "Allocation method Static"
+  type        = string
+}
+
+variable "allocation_method_dynamic" {
+  description = "Allocation method Dynamic"
+  type        = string
+}
+
+variable "pip_sku_basic" {
+  description = "SKU Basic"
+  type        = string
+}
+
+variable "pip_sku_standard" {
+  description = "SKU Standard"
+  type        = string
+}
+
+variable "lb_name" {
+  description = "LB name"
+  type        = string
+}
+
+variable "fip_name" {
+  description = "FIP name"
+  type        = string
+}
+
+variable "fip_public_ip_address_id" {
+  description = "FIP IP"
+  type        = string
+}
+
+variable "route_table_name" {
+  description = "Route Table name"
+  type        = string
+}
+
+variable "route_name_23" {
+  description = "Route name 23"
+  type        = string
+}
+
+variable "route_name_32" {
+  description = "Route name 32"
+  type        = string
 }
 
 
+variable "next_hop_type" {
+  description = "next_hop_type"
+  type        = string
+}
+
+variable "next_hop_in_ip_address" {
+  description = "next_hop_in_ip_address"
+  type        = string
+}
+
+variable "appgw_name" {
+  description = "appgw_name"
+  type        = string
+}
+
+variable "sku_name" {
+  description = "sku_name"
+  type        = string
+}
+
+variable "sku_tier" {
+  description = "sku_tier"
+  type        = string
+}
+
+variable "sku_capacity" {
+  description = "sku_capacity"
+  type        = number
+}
+
+variable "gw_ip_cong_name" {
+  description = "gw_ip_cong__name"
+  type        = string
+}
+
+variable "fport_name" {
+  description = "fport_name"
+  type        = string
+}
+
+variable "fport_port" {
+  description = "fport_port"
+  type        = number
+}
+
+variable "fip_conf_name" {
+  description = "fip_conf_name"
+  type        = string
+}
+
+variable "back_pool_name" {
+  description = "back_pool_name"
+  type        = string
+}
+
+variable "back_set_name" {
+  description = "back_set_name"
+  type        = string
+}
+
+variable "back_set_cookie" {
+  description = "back_set_cookie"
+  type        = string
+}
+
+variable "back_set_path" {
+  description = "back_set_path"
+  type        = string
+}
+
+variable "back_set_port" {
+  description = "back_set_port"
+  type        = number
+}
+
+variable "back_set_protocol" {
+  description = "back_set_protocol"
+  type        = string
+}
+
+variable "back_set_req_timeout" {
+  description = "back_set_req_timeout"
+  type        = number
+}
+
+variable "http_listener_name" {
+  description = "http_listener_name"
+  type        = string
+}
+
+variable "http_listener_fip_conf_name" {
+  description = "http_listener_fip_conf_name"
+  type        = string
+}
+
+variable "http_listener_fport_name" {
+  description = "http_listener_fport_name"
+  type        = string
+}
+
+variable "http_listener_protocol" {
+  description = "http_listener_protocol"
+  type        = string
+}
+
+variable "req_rule_name" {
+  description = "req_rule_name"
+  type        = string
+}
+
+variable "req_rule_priority" {
+  description = "req_rule_priority"
+  type        = number
+}
+
+variable "req_rule_type" {
+  description = "req_rule_type"
+  type        = string
+}
+
+variable "req_rule_http_name" {
+  description = "req_rule_http_name"
+  type        = string
+}
+
+variable "req_rule_back_address" {
+  description = "req_rule_back_address"
+  type        = string
+}
+
+variable "req_rule_back_http" {
+  description = "req_rule_back_http"
+  type        = string
+}

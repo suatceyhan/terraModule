@@ -5,7 +5,7 @@ variable "name" {
 
 variable "priority" {
   description = "priority"
-  type = string
+  type = number
 }
 
 variable "direction" {

@@ -1,0 +1,29 @@
+name: Terraform Deploy
+
+on:
+  push:
+    branches:
+      - master  # Adjust this to match your branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+
+      - name: Azure Login
+        run: az login --service-principal -u ${{ secrets.AZURE_CLIENT_ID }} -p ${{ secrets.AZURE_CLIENT_SECRET_VALUE }} --tenant ${{ secrets.AZURE_TENANT_ID }}
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Plan
+        run: ./scripts/plan.sh
+
+      - name: Terraform Apply
+        run: ./scripts/apply.sh

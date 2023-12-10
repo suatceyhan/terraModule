@@ -1,3 +1,3 @@
 #!/bin/bash
 cd environments/dev
-terraform apply -var-file=terraform.tfvars
+terraform apply -var-file="dev.tfvars" -auto-approve

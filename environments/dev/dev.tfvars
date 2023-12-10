@@ -2,6 +2,8 @@
 az104-06-rg1 = "dev-az104-06-rg1"
 az104-06-rg2 = "dev-az104-06-rg2"
 az104-06-rg3 = "dev-az104-06-rg3"
+az104-06-rg4 = "dev-az104-06-rg4"
+az104-06-rg5 = "dev-az104-06-rg5"
 rg1_location = "East US"
 rg2_location = "East US"
 rg3_location = "East US"
@@ -113,3 +115,49 @@ allow_gateway_transit_F        = false
 use_remote_gateways_T          = true
 use_remote_gateways_F          = false
 
+#PIP
+pip_name_LB               = "PublicIPForLB"
+pip_name_GWAPP            = "PublicIPForGWAPP"
+allocation_method_static  = "Static"
+allocation_method_dynamic = "Dynamic"
+pip_sku_basic             = "Basic"
+pip_sku_standard          = "Standard"
+
+#LB
+lb_name                  = "TestLoadBalancer"
+fip_name                 = "PublicIPAddress"
+fip_public_ip_address_id = "PIP-id"
+
+#Route
+route_table_name       = "route-table-test"
+route_name_23          = "route_name_23"
+route_name_32          = "route_name_32"
+next_hop_type          = "VirtualAppliance"
+next_hop_in_ip_address = "10.60.0.4"
+
+#APPGW
+appgw_name                  = "appgw"
+sku_name                    = "Standard_v2"
+sku_tier                    = "Standard_v2"
+sku_capacity                = 2
+gw_ip_cong_name             = "vnet01-gateway-ip-conf"
+fport_name                  = "vnet01-feport"
+fport_port                  = 80
+fip_conf_name               = "vnet01-feip"
+back_pool_name              = "vnet01-beap"
+back_set_name               = "vnet01-feip"
+back_set_cookie             = "Disabled"
+back_set_path               = "/path1/"
+back_set_port               = 80
+back_set_protocol           = "Http"
+back_set_req_timeout        = 60
+http_listener_name          = "vnet01-httplstn"
+http_listener_fip_conf_name = "vnet01-feip"
+http_listener_fport_name    = "vnet01-feip"
+http_listener_protocol      = "Http"
+req_rule_name               = "vnet01-rqrt"
+req_rule_priority           = 9
+req_rule_type               = "Basic"
+req_rule_http_name          = "vnet01-httplstn"
+req_rule_back_address       = "vnet01-beap"
+req_rule_back_http          = "vnet01-feip"
