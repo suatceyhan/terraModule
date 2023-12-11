@@ -5,12 +5,40 @@ on:
     branches:
       - master  # Adjust this to match your branch
 
-jobs: 
-  build-and-deploy:
+# jobs: 
+#   build-and-deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       # - name: Checkout repository
+#       #   uses: actions/checkout@v2
+
+#       - name: Install Azure CLI
+#         run: |
+#           curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+#           az --version
+
+#       - name: Log in with Azure
+#         uses: azure/login@v1
+#         with:
+#           creds: ${{ secrets.AZURE_CREDENTIALS }}
+  
+#       - name: Azure CLI script
+#         uses: azure/CLI@v1
+#         with:
+#           azcliversion: latest
+#           inlineScript: |
+#             az account show
+
+jobs:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-      # - name: Checkout repository
-      #   uses: actions/checkout@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
 
       - name: Install Azure CLI
         run: |
@@ -20,44 +48,13 @@ jobs:
       - name: Log in with Azure
         uses: azure/login@v1
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-  
-      - name: Azure CLI script
-        uses: azure/CLI@v1
-        with:
-          azcliversion: latest
-          inlineScript: |
-            az account show
+          creds: '${{ secrets.AZURE_CREDENTIALS }}'
 
-# jobs:
-#   deploy:
-#     runs-on: ubuntu-latest
+      - name: Terraform Init
+        run: terraform init
 
-#     steps:
-#       - name: Checkout Repository
-#         uses: actions/checkout@v2
+      - name: Terraform Plan
+        run: ./scripts/plan.sh
 
-#       - name: Setup Terraform
-#         uses: hashicorp/setup-terraform@v1
-
-#       - name: Install Azure CLI
-#         run: |
-#           curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-#           az --version
-
-#       # - name: Azure Login
-#       #   run: az login --service-principal -u ${{ secrets.AZURE_CLIENT_ID }} -p ${{ secrets.AZURE_CLIENT_SECRET_VALUE }} --tenant ${{ secrets.AZURE_TENANT_ID }}
-
-#       - name: Log in with Azure
-#         uses: azure/login@v1
-#         with:
-#           creds: '${{ secrets.AZURE_CREDENTIALS }}'
-
-#       - name: Terraform Init
-#         run: terraform init
-
-#       - name: Terraform Plan
-#         run: ./scripts/plan.sh
-
-#       - name: Terraform Apply
-#         run: ./scripts/apply.sh
+      - name: Terraform Apply
+        run: ./scripts/apply.sh
