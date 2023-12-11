@@ -24,10 +24,8 @@ jobs:
       - name: Log in with Azure
         uses: azure/login@v1
         with:
-          auth-type: IDENTITY
-          creds: '${{ secrets.AZURE_CREDENTIALS }}'
-          allow-no-subscriptions: true
-          enable-AzPSSession: true
+          AZURE_CREDENTIALS='${{ secrets.AZURE_CREDENTIALS }}'
+          
 
       - name: Terraform Init
         run: ./scripts/init.sh
