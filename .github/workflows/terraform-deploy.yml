@@ -16,10 +16,10 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
 
-      - name: Install Azure CLI
-        run: |
-          curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-          az --version
+      # - name: Install Azure CLI
+      #   run: |
+      #     curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+      #     az --version
 
       - name: Log in with Azure
         uses: azure/login@v1
