@@ -5,9 +5,9 @@ on:
     branches:
       - master  # Adjust this to match your branch
 
-permissions:
-  id-token: write
-  contents: read
+# permissions:
+#   id-token: write
+#   contents: read
 
 jobs: 
   build-and-deploy:
@@ -17,15 +17,8 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-          enable-AzPSSession: true
+          #enable-AzPSSession: true
           
-    #   - name: Azure CLI script
-    #     uses: azure/CLI@v1
-    #     with:
-    #       azcliversion: latest
-    #       inlineScript: |
-    #         az account show
-
       - name: Clone Repo LAB06
         run: |
             git clone https://github.com/suatceyhan/Lab06.git
@@ -33,25 +26,20 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
 
-    #   - name: Listing
-    #     run: |
-    #         pwd
-    #         ls -lR /home/runner/work
-
       - name: Terraform Init
         run: |
             cd /home/runner/work/Lab06/Lab06/Lab06
             chmod +x ./scripts/init.sh
             ./scripts/init.sh
 
-      - name: Terraform Plan
-        run: |
-            cd /home/runner/work/Lab06/Lab06/Lab06
-            chmod +x ./scripts/plan.sh
-            ./scripts/plan.sh
+    #   - name: Terraform Plan
+    #     run: |
+    #         cd /home/runner/work/Lab06/Lab06/Lab06
+    #         chmod +x ./scripts/plan.sh
+    #         ./scripts/plan.sh
 
-      - name: Terraform Apply
-        run: |
-            cd /home/runner/work/Lab06/Lab06/Lab06
-            chmod +x ./scripts/apply.sh
-            ./scripts/apply.sh
+    #   - name: Terraform Apply
+    #     run: |
+    #         cd /home/runner/work/Lab06/Lab06/Lab06
+    #         chmod +x ./scripts/apply.sh
+    #         ./scripts/apply.sh
