@@ -28,8 +28,6 @@ jobs:
       #     inlineScript: |
       #       az account show
 
-
-
       # - name: Setup Terraform
       #   uses: hashicorp/setup-terraform@v1
 
