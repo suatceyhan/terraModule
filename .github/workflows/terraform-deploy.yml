@@ -13,11 +13,11 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    #   - name: Azure login
-    #     uses: azure/login@v1
-    #     with:
-    #       creds: ${{ secrets.AZURE_CREDENTIALS }}
-    #       enable-AzPSSession: true
+      - name: Azure login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          enable-AzPSSession: true
           
     #   - name: Azure CLI script
     #     uses: azure/CLI@v1
@@ -30,25 +30,25 @@ jobs:
         run: |
             git clone https://github.com/suatceyhan/Lab06.git
 
-    #   - name: Setup Terraform
-    #     uses: hashicorp/setup-terraform@v1
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
 
-      - name: Listing
+    #   - name: Listing
+    #     run: |
+    #         pwd
+    #         ls -lR /home/runner/work
+
+      - name: Terraform Init
         run: |
-            pwd
-            ls -lR /home/runner/work
+            chmod +x /home/runner/work/Lab06/Lab06/Lab06/scripts/init.sh
+            /home/runner/work/Lab06/Lab06/Lab06/scripts/init.sh
 
-    #   - name: Terraform Init
-    #     run: |
-    #         chmod +x ./scripts/init.sh
-    #         ./scripts/init.sh
+      - name: Terraform Plan
+        run: |
+            chmod +x /home/runner/work/Lab06/Lab06/Lab06/scripts/plan.sh
+            /home/runner/work/Lab06/Lab06/Lab06/scripts/plan.sh
 
-    #   - name: Terraform Plan
-    #     run: |
-    #         chmod +x ./scripts/plan.sh
-    #         ./scripts/plan.sh
-
-    #   - name: Terraform Apply
-    #     run: |
-    #         chmod +x ./scripts/apply.sh
-    #         ./scripts/apply.sh
+      - name: Terraform Apply
+        run: |
+            chmod +x /home/runner/work/Lab06/Lab06/Lab06/scripts/apply.sh
+            /home/runner/work/Lab06/Lab06/Lab06/scripts/apply.sh
