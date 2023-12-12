@@ -1,16 +1,16 @@
-name: Terraform Deploy
+name: Terraform Apply
 
 on:
   push:
     branches:
       - master
 
-  workflow_dispatch:
-    inputs:
-      event-type:
-        description: 'Type of Terraform operation'
-        required: true
-        default: 'plan-and-apply' # Default value, change as needed
+  # workflow_dispatch:
+  #   inputs:
+  #     event-type:
+  #       description: 'Type of Terraform operation'
+  #       required: true
+  #       default: 'plan-and-apply' # Default value, change as needed
 
 jobs: 
   plan-and-apply:
@@ -45,13 +45,3 @@ jobs:
             cd /home/runner/work/Lab06/Lab06/Lab06
             chmod +x ./scripts/apply.sh
             ./scripts/apply.sh
-
-  destroy:
-    runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_run' && github.event.workflow == 'Terraform Workflow' && github.event.workflow_run.event == 'destroy'
-    steps:
-      - name: Terraform Apply
-        run: |
-            cd /home/runner/work/Lab06/Lab06/Lab06
-            chmod +x ./scripts/destroy.sh
-            ./scripts/destroy.sh

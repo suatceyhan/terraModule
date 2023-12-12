@@ -1,0 +1,15 @@
+name: Terraform Destroy
+
+on:
+    workflow_run: 
+
+jobs: 
+    destroy:
+        runs-on: ubuntu-latest
+        if: github.event_name == 'workflow_run' && github.event.workflow == 'Terraform Workflow' && github.event.workflow_run.event == 'destroy'
+        steps:
+          - name: Terraform Destroy
+            run: |
+                cd /home/runner/work/Lab06/Lab06/Lab06
+                chmod +x ./scripts/destroy.sh
+                ./scripts/destroy.sh
