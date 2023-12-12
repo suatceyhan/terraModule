@@ -5,6 +5,13 @@ on:
     branches:
       - master
 
+  workflow_dispatch:
+    inputs:
+      event-type:
+        description: 'Type of Terraform operation'
+        required: true
+        default: 'plan-and-apply' # Default value, change as needed
+
 jobs: 
   plan-and-apply:
     runs-on: ubuntu-latest
