@@ -19,24 +19,21 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
           enable-AzPSSession: true
           
-      - name: Azure CLI script
-        uses: azure/CLI@v1
-        with:
-          azcliversion: latest
-          inlineScript: |
-            az account show
+    #   - name: Azure CLI script
+    #     uses: azure/CLI@v1
+    #     with:
+    #       azcliversion: latest
+    #       inlineScript: |
+    #         az account show
 
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
 
-      
+      - name: Terraform Init
+        run: ./scripts/init.sh
 
-      # - name: Setup Terraform
-      #   uses: hashicorp/setup-terraform@v1
+      - name: Terraform Plan
+        run: ./scripts/plan.sh
 
-      # - name: Terraform Init
-      #   run: ./scripts/init.sh
-
-      # - name: Terraform Plan
-      #   run: ./scripts/plan.sh
-
-      # - name: Terraform Apply
-      #   run: ./scripts/apply.sh
+      - name: Terraform Apply
+        run: ./scripts/apply.sh
