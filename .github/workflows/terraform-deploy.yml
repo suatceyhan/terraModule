@@ -41,6 +41,7 @@ jobs:
 
   destroy:
     runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_run' && github.event.workflow == 'Terraform Workflow' && github.event.workflow_run.event == 'destroy'
     steps:
       - name: Terraform Apply
         run: |
