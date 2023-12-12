@@ -29,6 +29,12 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
 
+      - name: Listing
+        run: |
+            pwd
+            ls -la
+            ls -la /home/runner
+
       - name: Terraform Init
         run: |
             chmod +x ./scripts/init.sh
