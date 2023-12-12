@@ -32,7 +32,7 @@ jobs:
       - name: Listing
         run: |
             pwd
-            ls -la /home/runner/work/Lab06/Lab06
+            ls -lR /home/runner/work
 
     #   - name: Terraform Init
     #     run: |
