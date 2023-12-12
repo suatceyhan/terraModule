@@ -26,7 +26,7 @@ jobs:
     #       inlineScript: |
     #         az account show
 
-      - name: Clone Another Repository
+      - name: Clone Repo LAB06
         run: |
             git clone https://github.com/suatceyhan/Lab06.git
 
@@ -40,15 +40,18 @@ jobs:
 
       - name: Terraform Init
         run: |
-            chmod +x /home/runner/work/Lab06/Lab06/Lab06/scripts/init.sh
-            /home/runner/work/Lab06/Lab06/Lab06/scripts/init.sh
+            cd /home/runner/work/Lab06/Lab06/Lab06
+            chmod +x ./scripts/init.sh
+            ./scripts/init.sh
 
       - name: Terraform Plan
         run: |
-            chmod +x /home/runner/work/Lab06/Lab06/Lab06/scripts/plan.sh
-            /home/runner/work/Lab06/Lab06/Lab06/scripts/plan.sh
+            cd /home/runner/work/Lab06/Lab06/Lab06
+            chmod +x ./scripts/plan.sh
+            ./scripts/plan.sh
 
       - name: Terraform Apply
         run: |
-            chmod +x /home/runner/work/Lab06/Lab06/Lab06/scripts/apply.sh
-            /home/runner/work/Lab06/Lab06/Lab06/scripts/apply.sh
+            cd /home/runner/work/Lab06/Lab06/Lab06
+            chmod +x ./scripts/apply.sh
+            ./scripts/apply.sh
