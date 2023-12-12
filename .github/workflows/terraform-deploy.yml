@@ -26,6 +26,10 @@ jobs:
     #       inlineScript: |
     #         az account show
 
+      - name: Clone Another Repository
+        run: |
+            git clone https://github.com:suatceyhan/Lab06.git
+
     #   - name: Setup Terraform
     #     uses: hashicorp/setup-terraform@v1
 
