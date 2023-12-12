@@ -3,11 +3,7 @@ name: Terraform Deploy
 on:
   push:
     branches:
-      - master  # Adjust this to match your branch
-
-# permissions:
-#   id-token: write
-#   contents: read
+      - master
 
 jobs: 
   build-and-deploy:
@@ -17,7 +13,6 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-          #enable-AzPSSession: true
           
       - name: Clone Repo LAB06
         run: |
