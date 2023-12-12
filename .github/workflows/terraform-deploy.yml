@@ -6,7 +6,7 @@ on:
       - master
 
 jobs: 
-  build-and-deploy:
+  plan-and-apply:
     runs-on: ubuntu-latest
     steps:
       - name: Azure login
@@ -27,14 +27,23 @@ jobs:
             chmod +x ./scripts/init.sh
             ./scripts/init.sh
 
-    #   - name: Terraform Plan
-    #     run: |
-    #         cd /home/runner/work/Lab06/Lab06/Lab06
-    #         chmod +x ./scripts/plan.sh
-    #         ./scripts/plan.sh
+      - name: Terraform Plan
+        run: |
+            cd /home/runner/work/Lab06/Lab06/Lab06
+            chmod +x ./scripts/plan.sh
+            ./scripts/plan.sh
 
-    #   - name: Terraform Apply
-    #     run: |
-    #         cd /home/runner/work/Lab06/Lab06/Lab06
-    #         chmod +x ./scripts/apply.sh
-    #         ./scripts/apply.sh
+      - name: Terraform Apply
+        run: |
+            cd /home/runner/work/Lab06/Lab06/Lab06
+            chmod +x ./scripts/apply.sh
+            ./scripts/apply.sh
+
+  destroy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Terraform Apply
+        run: |
+            cd /home/runner/work/Lab06/Lab06/Lab06
+            chmod +x ./scripts/destroy.sh
+            ./scripts/destroy.sh
