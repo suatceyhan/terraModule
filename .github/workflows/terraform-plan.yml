@@ -1,15 +1,12 @@
-name: Terraform Apply
+name: Terraform Plan
 
 on:
-  workflow_dispatch:
-    inputs:
-      event-type:
-        description: 'Type of Terraform operation'
-        required: true
-        default: 'apply' # Default value, change as needed
+  push:
+    branches:
+      - master
 
 jobs: 
-  apply:
+  plan:
     runs-on: ubuntu-latest
     steps:
       - name: Azure login
@@ -30,8 +27,8 @@ jobs:
             chmod +x ./scripts/init.sh
             ./scripts/init.sh
 
-      - name: Terraform Apply
+      - name: Terraform Plan
         run: |
             cd /home/runner/work/Lab06/Lab06/Lab06
-            chmod +x ./scripts/apply.sh
-            ./scripts/apply.sh
+            chmod +x ./scripts/plan.sh
+            ./scripts/plan.sh

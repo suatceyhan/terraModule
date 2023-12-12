@@ -1,4 +1,4 @@
-name: Terraform Apply
+name: Terraform Destroy
 
 on:
   workflow_dispatch:
@@ -6,10 +6,10 @@ on:
       event-type:
         description: 'Type of Terraform operation'
         required: true
-        default: 'apply' # Default value, change as needed
+        default: 'destroy' # Default value, change as needed
 
 jobs: 
-  apply:
+  destroy:
     runs-on: ubuntu-latest
     steps:
       - name: Azure login
@@ -24,14 +24,8 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
 
-      - name: Terraform Init
+      - name: Terraform Destroy
         run: |
             cd /home/runner/work/Lab06/Lab06/Lab06
-            chmod +x ./scripts/init.sh
-            ./scripts/init.sh
-
-      - name: Terraform Apply
-        run: |
-            cd /home/runner/work/Lab06/Lab06/Lab06
-            chmod +x ./scripts/apply.sh
-            ./scripts/apply.sh
+            chmod +x ./scripts/destroy.sh
+            ./scripts/destroy.sh
