@@ -30,10 +30,16 @@ jobs:
         uses: hashicorp/setup-terraform@v1
 
       - name: Terraform Init
-        run: ./scripts/init.sh
+        run: |
+            chmod +x ./scripts/init.sh
+            ./scripts/init.sh
 
       - name: Terraform Plan
-        run: ./scripts/plan.sh
+        run: |
+            chmod +x ./scripts/plan.sh
+            ./scripts/plan.sh
 
       - name: Terraform Apply
-        run: ./scripts/apply.sh
+        run: |
+            chmod +x ./scripts/apply.sh
+            ./scripts/apply.sh
