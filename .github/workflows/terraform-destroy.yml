@@ -6,7 +6,7 @@ on:
       event-type:
         description: 'Type of Terraform operation'
         required: true
-        default: 'destroy' # Default value, change as needed
+        default: 'destroy'
 
 jobs: 
   destroy:
