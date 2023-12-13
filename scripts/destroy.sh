@@ -8,4 +8,5 @@ terraform destroy \
   -var="ARM_TENANT_ID=$ARM_TENANT_ID" \
   -var="ARM_SUBSCRIPTION_ID=$ARM_SUBSCRIPTION_ID" \
   -var-file="dev.tfvars" \
-  -auto-approve
+  -auto-approve \
+  -lock=false
