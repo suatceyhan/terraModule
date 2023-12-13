@@ -9,16 +9,20 @@ jobs:
   plan:
     runs-on: ubuntu-latest
     env:
-      AZURE_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
-      AZURE_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
-      AZURE_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
-      AZURE_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+      ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+      ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+      ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+      ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
     steps:
       - name: Azure login
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
           enable-AzPSSession: true
+        # run: |
+        #     export ARM_CLIENT_ID="e8364cb0-6e22-4a6f-8544-526950435d93"
+        #     export ARM_CLIENT_SECRET="un.8Q~quTGi2UDFUHte9XI-Y~J4jCkWzVyXEKbTM"
+        #     export ARM_TENANT_ID="5057ae25-64bc-4a8a-91f9-dc6496c05393"
 
       - name: 'Run az commands'
         run: |
