@@ -9,16 +9,22 @@ jobs:
   plan:
     runs-on: ubuntu-latest
     env:
-      AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-      AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
-      AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
-      AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      AZURE_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+      AZURE_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+      AZURE_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+      AZURE_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
     steps:
       - name: Azure login
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-          
+          enable-AzPSSession: true
+
+      - name: 'Run az commands'
+        run: |
+            az account show
+            az group list          
+
       - name: Clone Repo LAB06
         run: |
             git clone https://github.com/suatceyhan/Lab06.git
@@ -37,4 +43,3 @@ jobs:
             cd /home/runner/work/Lab06/Lab06/Lab06
             chmod +x ./scripts/plan.sh
             ./scripts/plan.sh
-            
