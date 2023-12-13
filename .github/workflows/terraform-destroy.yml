@@ -36,6 +36,12 @@ jobs:
               --container-name terrasuatcontainer \
               --blob-name terraform.tfstate
 
+      - name: Terraform Init
+        run: |
+            cd /home/runner/work/Lab06/Lab06/Lab06
+            chmod +x ./scripts/init.sh
+            ./scripts/init.sh
+
       - name: Terraform Destroy
         run: |
             cd /home/runner/work/Lab06/Lab06/Lab06
@@ -43,6 +49,7 @@ jobs:
             ./scripts/destroy.sh
 
       - name: Blob Lease
+        if: always()
         run: |
             az storage blob lease acquire \
               --account-name suatterraformstate \

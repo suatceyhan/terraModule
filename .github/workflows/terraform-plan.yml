@@ -47,6 +47,7 @@ jobs:
             ./scripts/plan.sh
 
       - name: Blob Lease
+        if: always()
         run: |
             az storage blob lease acquire \
               --account-name suatterraformstate \
