@@ -37,3 +37,4 @@ jobs:
             cd /home/runner/work/Lab06/Lab06/Lab06
             chmod +x ./scripts/plan.sh
             ./scripts/plan.sh
+            
