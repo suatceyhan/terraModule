@@ -1,9 +1,15 @@
 name: Terraform Plan
 
 on:
-  push:
-    branches:
-      - master
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+# on:
+#   push:
+#     branches:
+#       - master
 
 jobs: 
   plan:
