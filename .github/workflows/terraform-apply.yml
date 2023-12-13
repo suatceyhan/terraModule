@@ -6,7 +6,7 @@ on:
       event-type:
         description: 'Type of Terraform operation'
         required: true
-        default: 'apply' # Default value, change as needed
+        default: 'apply'
 
 jobs: 
   apply:
