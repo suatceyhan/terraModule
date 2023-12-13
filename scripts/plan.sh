@@ -3,9 +3,8 @@ cd environments/dev
 #terraform plan -var-file="dev.tfvars"
 
 terraform plan \
-    -var="ARM_CLIENT_ID=${secrets.ARM_CLIENT_ID}" \
-    -var="ARM_CLIENT_SECRET=${secrets.ARM_CLIENT_SECRET}" \
-    -var="ARM_TENANT_ID=${secrets.ARM_TENANT_ID}" \
-    -var="ARM_SUBSCRIPTION_ID=${secrets.ARM_SUBSCRIPTION_ID}" \
-    -var-file="dev.tfvars"
-
+  -var="ARM_CLIENT_ID=$ARM_CLIENT_ID" \
+  -var="ARM_CLIENT_SECRET=$ARM_CLIENT_SECRET" \
+  -var="ARM_TENANT_ID=$ARM_TENANT_ID" \
+  -var="ARM_SUBSCRIPTION_ID=$ARM_SUBSCRIPTION_ID" \
+  -var-file="dev.tfvars"
