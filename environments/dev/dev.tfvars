@@ -161,9 +161,3 @@ req_rule_type               = "Basic"
 req_rule_http_name          = "vnet01-httplstn"
 req_rule_back_address       = "vnet01-beap"
 req_rule_back_http          = "vnet01-feip"
-
-
-# ARM_CLIENT_ID       = ${ secrets.ARM_CLIENT_ID }
-# ARM_CLIENT_SECRET   = ${ secrets.ARM_CLIENT_SECRET }
-# ARM_TENANT_ID       = ${ secrets.ARM_TENANT_ID }
-# ARM_SUBSCRIPTION_ID = ${ secrets.ARM_SUBSCRIPTION_ID }
