@@ -163,7 +163,7 @@ req_rule_back_address       = "vnet01-beap"
 req_rule_back_http          = "vnet01-feip"
 
 
-# AZURE_CLIENT_ID       = ${{ secrets.AZURE_CLIENT_ID }}
-# AZURE_CLIENT_SECRET   = ${{ secrets.AZURE_CLIENT_SECRET }}
-# AZURE_TENANT_ID       = ${{ secrets.AZURE_TENANT_ID }}
-# AZURE_SUBSCRIPTION_ID = ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+ARM_CLIENT_ID       = ${{ secrets.ARM_CLIENT_ID }}
+ARM_CLIENT_SECRET   = ${{ secrets.ARM_CLIENT_SECRET }}
+ARM_TENANT_ID       = ${{ secrets.ARM_TENANT_ID }}
+ARM_SUBSCRIPTION_ID = ${{ secrets.ARM_SUBSCRIPTION_ID }}

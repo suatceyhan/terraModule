@@ -19,10 +19,6 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
           enable-AzPSSession: true
-        # run: |
-        #     export ARM_CLIENT_ID="e8364cb0-6e22-4a6f-8544-526950435d93"
-        #     export ARM_CLIENT_SECRET="un.8Q~quTGi2UDFUHte9XI-Y~J4jCkWzVyXEKbTM"
-        #     export ARM_TENANT_ID="5057ae25-64bc-4a8a-91f9-dc6496c05393"
 
       - name: 'Run az commands'
         run: |
