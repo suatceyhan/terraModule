@@ -29,8 +29,22 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
 
+      - name: Blob Release
+        run: |
+            az storage blob lease break \
+              --account-name suatterraformstate \
+              --container-name terrasuatcontainer \
+              --blob-name terraform.tfstate
+
       - name: Terraform Destroy
         run: |
             cd /home/runner/work/Lab06/Lab06/Lab06
             chmod +x ./scripts/destroy.sh
             ./scripts/destroy.sh
+
+      - name: Blob Lease
+        run: |
+            az storage blob lease acquire \
+              --account-name suatterraformstate \
+              --container-name terrasuatcontainer \
+              --blob-name terraform.tfstate  
