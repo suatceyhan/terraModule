@@ -1,12 +1,17 @@
 name: Terraform Apply
 
 on:
-  workflow_dispatch:
-    inputs:
-      event-type:
-        description: 'Type of Terraform operation'
-        required: true
-        default: 'apply'
+  pull_request:
+    types:
+      - closed
+
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       event-type:
+#         description: 'Type of Terraform operation'
+#         required: true
+#         default: 'apply'
 
 jobs: 
   apply:
