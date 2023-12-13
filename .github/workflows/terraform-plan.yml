@@ -20,11 +20,6 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
           enable-AzPSSession: true
 
-      - name: 'Run az commands'
-        run: |
-            az account show
-            az group list          
-
       - name: Clone Repo LAB06
         run: |
             git clone https://github.com/suatceyhan/Lab06.git
